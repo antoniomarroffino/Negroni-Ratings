@@ -1,0 +1,24 @@
+# 🔧 IDE
+.idea/
+*.iml
+.vscode/
+
+# 🧪 Maven/Java
+backend/target/
+**/.classpath
+**/.project
+**/.settings/
+
+# ⚛️ Node/React
+frontend/node_modules/
+frontend/dist/
+frontend/.next/
+frontend/.turbo/
+frontend/.eslintcache
+
+# 💅 Styling
+*.log
+*.lock
+.env
+.env.*
+.DS_Store
