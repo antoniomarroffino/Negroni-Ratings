@@ -6,11 +6,13 @@ import com.negroni.model.dto.NegroniDTO;
 import com.negroni.repository.INegroniRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
+@Transactional
 public class NegroniService implements INegroniService{
 
     @Inject
