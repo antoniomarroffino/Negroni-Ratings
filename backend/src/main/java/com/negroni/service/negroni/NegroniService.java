@@ -1,9 +1,9 @@
-package com.negroni.service;
+package com.negroni.service.negroni;
 
 import com.negroni.mapper.NegroniMapper;
 import com.negroni.model.Negroni;
 import com.negroni.model.dto.NegroniDTO;
-import com.negroni.repository.INegroniRepository;
+import com.negroni.repository.negroni.INegroniRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;

@@ -1,4 +1,4 @@
-package com.negroni.service;
+package com.negroni.service.negroni;
 
 import com.negroni.model.dto.NegroniDTO;
 

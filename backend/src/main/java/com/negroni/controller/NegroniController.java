@@ -1,7 +1,7 @@
 package com.negroni.controller;
 
 import com.negroni.model.dto.NegroniDTO;
-import com.negroni.service.INegroniService;
+import com.negroni.service.negroni.INegroniService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;

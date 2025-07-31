@@ -1,4 +1,4 @@
-package com.negroni.repository;
+package com.negroni.repository.negroni;
 
 import com.negroni.model.Negroni;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;

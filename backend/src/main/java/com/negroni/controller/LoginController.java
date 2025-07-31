@@ -7,7 +7,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import io.quarkus.qute.Template;
 
-@Path("/login")
+@Path("/no")
 public class LoginController {
 
     @Inject
