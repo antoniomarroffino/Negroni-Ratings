@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { RegisterDTO } from '../../api/authApi'
+import { RegisterDTO } from '../../types/types'
 import { useRegister } from '../../hooks/useRegister'
 import { useAuth } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
@@ -35,8 +35,8 @@ export default function SignupForm({ toggle }: Props) {
     }
 
     return (
-        <form className="form sign-up" onSubmit={handleSubmit}>
-            <div className="input-group">
+        <form className="auth-form auth-sign-up" onSubmit={handleSubmit}>
+            <div className="auth-input-group">
                 <i className="bx bxs-user"></i>
                 <input
                     type="text"
@@ -46,7 +46,7 @@ export default function SignupForm({ toggle }: Props) {
                     onChange={handleChange}
                 />
             </div>
-            <div className="input-group">
+            <div className="auth-input-group">
                 <i className="bx bxs-lock-alt"></i>
                 <input
                     type="password"
@@ -56,7 +56,7 @@ export default function SignupForm({ toggle }: Props) {
                     onChange={handleChange}
                 />
             </div>
-            <div className="input-group">
+            <div className="auth-input-group">
                 <i className="bx bxs-lock-alt"></i>
                 <input
                     type="text"
@@ -66,7 +66,7 @@ export default function SignupForm({ toggle }: Props) {
                     onChange={handleChange}
                 />
             </div>
-            <div className="input-group">
+            <div className="auth-input-group">
                 <i className="bx bxs-lock-alt"></i>
                 <input
                     type="text"
@@ -83,7 +83,7 @@ export default function SignupForm({ toggle }: Props) {
 
             <p>
                 <span>Hai già un account?</span>
-                <b onClick={toggle} className="pointer">Accedi</b>
+                <b onClick={toggle} className="auth-pointer">Accedi</b>
             </p>
 
             {registerMutation.isError && (

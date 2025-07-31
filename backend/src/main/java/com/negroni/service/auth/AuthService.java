@@ -7,6 +7,7 @@ import com.negroni.repository.auth.IUserRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.BadRequestException;
+import org.mindrot.jbcrypt.BCrypt;
 
 @ApplicationScoped
 public class AuthService implements IAuthService {
@@ -17,7 +18,7 @@ public class AuthService implements IAuthService {
     public AuthResponseDTO login(LoginDTO dto) {
         User user = userRepository.findByUsername(dto.username);
 
-        if (user == null || !user.password.equals(dto.password)) {
+        if (user == null || !BCrypt.checkpw(dto.password, user.password)) {
             throw new BadRequestException("Invalid username or password");
         }
 

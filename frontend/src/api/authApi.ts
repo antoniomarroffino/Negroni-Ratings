@@ -1,33 +1,31 @@
 import axios from 'axios'
 
-export interface LoginDTO {
-    username: string
-    password: string
-}
-
-export interface RegisterDTO extends LoginDTO {
-    name: string
-    surname: string
-}
-
-export interface AuthResponse {
-    token: string
-    username: string
-    name: string
-    surname: string
-}
-
-const api = axios.create({
+export const publicApi = axios.create({
     baseURL: 'http://localhost:8080/api/auth',
     withCredentials: true
 })
 
+export const privateApi = axios.create({
+    baseURL: 'http://localhost:8080/api/auth',
+    withCredentials: true
+})
+
+privateApi.interceptors.request.use(config => {
+    const token = localStorage.getItem('token')
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`
+    }
+    return config
+})
+
+import { LoginDTO, RegisterDTO, AuthResponse } from '../types/types'
+
 export const loginUser = async (data: LoginDTO): Promise<AuthResponse> => {
-    const res = await api.post('/login', data)
+    const res = await publicApi.post('/login', data)
     return res.data
 }
 
 export const registerUser = async (data: RegisterDTO): Promise<AuthResponse> => {
-    const res = await api.post('/register', data)
+    const res = await publicApi.post('/register', data)
     return res.data
 }

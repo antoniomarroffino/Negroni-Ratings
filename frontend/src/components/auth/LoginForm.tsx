@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useLogin } from '../../hooks/useLogin'
-import { LoginDTO } from '../../api/authApi'
+import { LoginDTO } from '../../types/types'
 import { useAuth } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 
